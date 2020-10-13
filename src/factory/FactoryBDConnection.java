@@ -4,9 +4,10 @@ package factory;
  *
  * @author fernando prudencio
  */
-public class FabricBDConnection {
+public class FactoryBDConnection implements FactoryBD {
 
-    public BDConnection getConnection(TypeConnection typeConnection) {
+    @Override
+    public BDConnection createConnection(TypeConnection typeConnection) {
         assert (typeConnection != null);
         switch (typeConnection) {
             case MYSQL:

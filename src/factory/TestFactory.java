@@ -11,24 +11,24 @@ public class TestFactory {
      */
     public static void main(String[] args) {
         BDConnection connection;
-        FabricBDConnection fabricConnection = new FabricBDConnection();
+        FactoryBD fabricConnection = new FactoryBDConnection();
         //conection to postresql
         System.out.println("Connection to postresql");
-        connection = fabricConnection.getConnection(TypeConnection.POSTGRESQL);
+        connection = fabricConnection.createConnection(TypeConnection.POSTGRESQL);
         connection.connect();
         connection.disconnect();
         System.out.println("");
 
         //conection to mysql
         System.out.println("Connection to mysql");
-        connection = fabricConnection.getConnection(TypeConnection.MYSQL);
+        connection = fabricConnection.createConnection(TypeConnection.MYSQL);
         connection.connect();
         connection.disconnect();
         System.out.println("");
 
         //conection to sql sever
         System.out.println("Connection to sql server");
-        connection = fabricConnection.getConnection(TypeConnection.SQLSERVER);
+        connection = fabricConnection.createConnection(TypeConnection.SQLSERVER);
         connection.connect();
         connection.disconnect();
 
